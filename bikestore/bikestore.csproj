@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F438D71-FF57-4D53-B204-88B3EB408333}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>bikestore</RootNamespace>
+    <AssemblyName>bikestore</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BIKESTOREFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BIKESTOREFORM.Designer.cs">
+      <DependentUpon>BIKESTOREFORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BIKESTOREMODEL.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BIKESTOREMODEL.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIKESTOREMODEL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BIKESTOREMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIKESTOREMODEL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BIKESTOREMODEL.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="brands.cs">
+      <DependentUpon>BIKESTOREMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BRANDSFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BRANDSFORM.Designer.cs">
+      <DependentUpon>BRANDSFORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="categories.cs">
+      <DependentUpon>BIKESTOREMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CATEGORIESFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CATEGORIESFORM.Designer.cs">
+      <DependentUpon>CATEGORIESFORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CUSTOMERFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CUSTOMERFORM.Designer.cs">
+      <DependentUpon>CUSTOMERFORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customers.cs">
+      <DependentUpon>BIKESTOREMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAPFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAPFORM.Designer.cs">
+      <DependentUpon>MAPFORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORDERFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ORDERFORM.Designer.cs">
+      <DependentUpon>ORDERFORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORDERITEMSFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ORDERITEMSFORM.Designer.cs">
+      <DependentUpon>ORDERITEMSFORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="orders.cs">
+      <DependentUpon>BIKESTOREMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="order_items.cs">
+      <DependentUpon>BIKESTOREMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCTFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRODUCTFORM.Designer.cs">
+      <DependentUpon>PRODUCTFORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCTIONFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRODUCTIONFORM.Designer.cs">
+      <DependentUpon>PRODUCTIONFORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="products.cs">
+      <DependentUpon>BIKESTOREMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SALESFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SALESFORM.Designer.cs">
+      <DependentUpon>SALESFORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STAFFFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STAFFFORM.Designer.cs">
+      <DependentUpon>STAFFFORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="staffs.cs">
+      <DependentUpon>BIKESTOREMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stocks.cs">
+      <DependentUpon>BIKESTOREMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STOCKSFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STOCKSFORM.Designer.cs">
+      <DependentUpon>STOCKSFORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="stores.cs">
+      <DependentUpon>BIKESTOREMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STORESFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STORESFORM.Designer.cs">
+      <DependentUpon>STORESFORM.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BIKESTOREFORM.resx">
+      <DependentUpon>BIKESTOREFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BRANDSFORM.resx">
+      <DependentUpon>BRANDSFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CATEGORIESFORM.resx">
+      <DependentUpon>CATEGORIESFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CUSTOMERFORM.resx">
+      <DependentUpon>CUSTOMERFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAPFORM.resx">
+      <DependentUpon>MAPFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ORDERFORM.resx">
+      <DependentUpon>ORDERFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ORDERITEMSFORM.resx">
+      <DependentUpon>ORDERITEMSFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRODUCTFORM.resx">
+      <DependentUpon>PRODUCTFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRODUCTIONFORM.resx">
+      <DependentUpon>PRODUCTIONFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SALESFORM.resx">
+      <DependentUpon>SALESFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STAFFFORM.resx">
+      <DependentUpon>STAFFFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STOCKSFORM.resx">
+      <DependentUpon>STOCKSFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STORESFORM.resx">
+      <DependentUpon>STORESFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="BIKESTOREMODEL.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BIKESTOREMODEL.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BIKESTOREMODEL.edmx.diagram">
+      <DependentUpon>BIKESTOREMODEL.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bikestore.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cyclist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BIKESTOREMODEL.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BIKESTOREMODEL.Context.cs</LastGenOutput>
+      <DependentUpon>BIKESTOREMODEL.edmx</DependentUpon>
+    </Content>
+    <Content Include="BIKESTOREMODEL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BIKESTOREMODEL.edmx</DependentUpon>
+      <LastGenOutput>BIKESTOREMODEL.cs</LastGenOutput>
+    </Content>
+    <None Include="World.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
